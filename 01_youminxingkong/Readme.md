@@ -24,5 +24,23 @@
 			或者python3 run.py
 			这次修改之后，会自动的适应python版本，应该算是比较完善了
 后续想到什么再接着更新
+		PS:   在创建一个库的时候，每次的提交可能都需要输入账号密码，因为是采用的http的模式来修改
+			通过下面的修改可以不用每次都提交
+			首先是需要把ssh key加到上面
+			然后修改 创建的库下面的配置文件， .git/config 里面的内容
+				
+			[remote "origin"]
+        		#url = https://github.com/JimyFengqi/JimyFengqi_spider.git
+       		 	url = https://账号:密码@github.com/JimyFengqi/JimyFengqi_spider.git
+       			
+        		fetch = +refs/heads/*:refs/remotes/origin/*
+
+
+
+
+
 (原文博客地址：)[https://blog.csdn.net/qiqiyingse/article/details/51801918 "show"]
+
+
+
 
