@@ -50,7 +50,7 @@ class MyQiuBai:
     
           
     def getPageItem(self,html,pageIndex):      
-        print u'开始获取条目'    
+        print u'开始获取新的内容，请稍后...'    
         #定义存贮list，保存所需内容      
         pageStories=[]      
         #通过正则暴力匹配获取内容，依次是作者、内容、点赞人数、评论人数      
@@ -116,8 +116,9 @@ class MyQiuBai:
         story=self.getOneJoke()    
         #获取当前时间      
         writetime=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S ')      
-        #打印输出一条段子      
-        #print u"第%d页第%s篇\t发布人:%s\t%s\n%s\n赞:%s  评论人数:%s\n" % (story[5],story[0],story[1],str(writetime),story[2],story[3],story[4])      
+        #打印输出一条段子   
+        print '*********************************************************************************'
+        print u"第%d页第%s篇\t发布人:%s\t%s\n%s\n赞:%s  评论人数:%s\n" % (story[5],story[0],story[1],str(writetime),story[2],story[3],story[4])      
         #输出之后，将其写到文件中      
         content="第%d页第%s篇\t发布人:%s\t%s\n%s\n赞:%s  评论人数:%s\n" % (story[5],story[0],story[1],str(writetime),story[2],story[3],story[4])      
         self.filesymbol.write(content)      
@@ -139,7 +140,7 @@ def showContent():
                 
     
 if __name__ == '__main__':      
-    author_content='''''   
+    author_content='''   
         *****************************************************  
                 welcome to spider of qiushibaike          
                      modify on 2017-05-11             
@@ -147,7 +148,7 @@ if __name__ == '__main__':
         *****************************************************  
         '''  
                 
-    #print author_content    
+    print author_content    
         
         
     qiubai=MyQiuBai()    
