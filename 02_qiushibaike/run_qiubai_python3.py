@@ -41,11 +41,11 @@ class MyQiuBai:
             html=HTMLParser.HTMLParser().unescape(html)#处理网页内容， 可以将一些html类型的符号如" 转换回双引号         
             return html      
         #捕捉异常，防止程序直接死掉      
-        except urllib2.URLError,e:    
-            print u"连接失败，错误原因",e.reason      
+        except urllib2.URLError as e:    
+            print (u"连接失败，错误原因",e.reason)
             return None      
-        except urllib2.HTTPError,e:        
-            print u"连接失败，错误原因：%s " % e.code        
+        except urllib2.HTTPError as e:        
+            print (u"连接失败，错误原因：%s " % e.code  )
             return None        
     
           
